@@ -1,3 +1,3 @@
-export function commentsReducer(state = { 'hello': 'ok' }, action) {
+export function commentsReducer(state = { hello: 'ok' }, action) {
   return state;
 }

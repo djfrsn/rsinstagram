@@ -30,18 +30,27 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        exclude: /node_modules/,
+        options: {
+          emitWarning: true
+        }
+      },
+      {
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           "presets": [
-              "react",
-              ["env", { // Include ES2015-2017+ features not include in the following browsers
-                "targets": {
-                  "browsers": ["last 2 versions", "safari >= 7"]
-                },
-                "modules": false // use Webpack 2 ES modules instead of babel's
-              }]
-            ]
+            "react",
+            ["env", { // Include ES2015-2017+ features not include in the following browsers
+              "targets": {
+                "browsers": ["last 2 versions", "safari >= 7"]
+              },
+              "modules": false // use Webpack 2 ES modules instead of babel's
+            }]
+          ]
         }
       }
     ]
