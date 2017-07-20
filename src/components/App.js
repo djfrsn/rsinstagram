@@ -1,10 +1,9 @@
-import Test from './test';
+import Test from "./test";
 
-const App = () => (
+const App = () =>
   <div>
     rsinstagram
-    <Test hmm="works"/>
-  </div>
-);
+    <Test hmm="works" />
+  </div>;
 
 export default App;

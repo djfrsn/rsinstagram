@@ -34,7 +34,8 @@ module.exports = {
         enforce: 'pre',
         exclude: /node_modules/,
         options: {
-          emitWarning: true
+          emitWarning: true,
+          failOnError: true
         }
       },
       {
