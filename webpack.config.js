@@ -1,11 +1,11 @@
 require("babel-register"); // Enable ES6 syntax
 
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
-const dist = path.resolve(__dirname, 'dist');
+const dist = path.resolve(__dirname, "dist");
 // TODO: check for things labled dev-only and opt those features out in prod
 
 // Add for prod
@@ -13,14 +13,14 @@ const dist = path.resolve(__dirname, 'dist');
 // React transforms - https://babeljs.io/docs/plugins/transform-react-inline-elements/
 
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   entry: [
     // TODO: remove hot loader in prod - https://survivejs.com/webpack/appendices/hmr-with-react/
-    'react-hot-loader/patch',
-    './src/index.js'
+    "react-hot-loader/patch",
+    "./src/index.js"
   ],
   output: {
-    filename: 'index.bundle.js',
+    filename: "index.bundle.js",
     path: dist
   },
   devServer: {
@@ -30,8 +30,8 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
+        loader: "eslint-loader",
+        enforce: "pre",
         exclude: /node_modules/,
         options: {
           emitWarning: true,
@@ -41,38 +41,40 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
-          "presets": [
+          presets: [
             "react",
-            ["env", { // Include ES2015-2017+ features not include in the following browsers
-              "targets": {
-                "browsers": ["last 2 versions", "safari >= 7"]
-              },
-              "modules": false // use Webpack 2 ES modules instead of babel's
-            }]
+            [
+              "env",
+              {
+                // Include ES2015-2017+ features not include in the following browsers
+                targets: {
+                  browsers: ["last 2 versions", "safari >= 7"]
+                },
+                modules: false // use Webpack 2 ES modules instead of babel's
+              }
+            ]
           ]
         }
       }
     ]
   },
   resolve: {
-    modules: [
-      'src',
-      'node_modules'
-    ],
-    extensions: ['.js', '.json', '.css', '.scss', '.html']
+    modules: ["src", "node_modules"],
+    extensions: [".js", ".json", ".css", ".scss", ".html"]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']), // clean dist before each build
+    new CleanWebpackPlugin(["dist"]), // clean dist before each build
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html'),
+      template: path.resolve(__dirname, "src/index.html"),
       hash: true
     }),
     new webpack.NamedModulesPlugin(), //  display file paths in console during hmr - dev-only
-    new webpack.ProvidePlugin({ // global keywords available in the app
+    new webpack.ProvidePlugin({
+      // global keywords available in the app
       // TODO: as a test see if its possible to drop in something like deku instead of react
-      React: 'react'
+      React: "react"
     })
   ]
 };

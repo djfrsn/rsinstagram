@@ -3,7 +3,11 @@
     "prettier",
     "prettier/react"
   ],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
+    "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
     "react/react-in-jsx-scope": "off",
     "react/wrap-multilines": "off"
   }

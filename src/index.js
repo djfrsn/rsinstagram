@@ -7,10 +7,9 @@ import App from "./components/App";
 
 let store = createStore(commentsReducer);
 
-// TODO: setup eslint - https://survivejs.com/webpack/developing/linting/
 // TODO: add https://www.npmjs.com/package/babel-plugin-transform-imports to this 4over/4over-cart
 // TODO: setup prod webpack config - https://survivejs.com/webpack/developing/composing-configuration/
-// with above..enable tree shaking https://survivejs.com/webpack/optimizing/tree-shaking/
+// with above..enableb tree shaking https://survivejs.com/webpack/optimizing/tree-shaking/
 const start = App => {
   render(
     <Provider store={store}>
