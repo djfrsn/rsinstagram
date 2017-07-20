@@ -1,9 +1,9 @@
-import React from "react";
-import { render } from "react-dom";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import { commentsReducer } from "./containers/comments";
-import App from "./components/App";
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { commentsReducer } from './containers/comments';
+import App from './components/App';
 
 let store = createStore(commentsReducer);
 
@@ -15,7 +15,7 @@ const start = App => {
     <Provider store={store}>
       <App />
     </Provider>,
-    document.getElementById("root")
+    document.getElementById('root')
   );
 };
 
@@ -23,7 +23,7 @@ start(App);
 
 // Enable HMR - update our components and reducer on hot updates
 if (module.hot) {
-  module.hot.accept(["./components/App", "./containers/comments"], () => {
+  module.hot.accept(['./components/App', './containers/comments'], () => {
     store.replaceReducer(commentsReducer);
     start(App);
   });
