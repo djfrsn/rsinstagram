@@ -2,10 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { commentsReducer } from './containers/comments';
+import { postsReducer } from './containers/posts';
 import App from './components/App';
 
-let store = createStore(commentsReducer);
+let store = createStore(postsReducer);
 
 // TODO: add https://www.npmjs.com/package/babel-plugin-transform-imports to this 4over/4over-cart
 // TODO: setup prod webpack config - https://survivejs.com/webpack/developing/composing-configuration/
@@ -23,8 +23,8 @@ start(App);
 
 // Enable HMR - update our components and reducer on hot updates
 if (module.hot) {
-  module.hot.accept(['./components/App', './containers/comments'], () => {
-    store.replaceReducer(commentsReducer);
+  module.hot.accept(['./components/App', './containers/posts'], () => {
+    store.replaceReducer(postsReducer);
     start(App);
   });
 }

@@ -48,7 +48,7 @@ module.exports = {
             [
               'env',
               {
-                // Include ES2015-2017+ features not include in the following browsers
+                // Include ES2015-2017+ features not included in the following browsers
                 targets: {
                   browsers: ['last 2 versions', 'safari >= 7']
                 },

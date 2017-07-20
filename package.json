@@ -1,7 +1,7 @@
 {
   "name": "rsinstagram",
   "version": "0.0.0",
-  "description": "Code test based off Instagram UI",
+  "description": "Code example based off Instagram UI",
   "main": "src/index.js",
   "scripts": {
     "precommit": "lint-staged",
