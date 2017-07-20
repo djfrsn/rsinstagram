@@ -1,6 +1,10 @@
 # RSInstagram Code Test
 
 ### Install
-`cd rsinstagram && git clone repoUrl .`
-`npm install`
+`git clone https://github.com/djfrsn/rsinstagram.git && cd rsinstagram`
+`npm install && npm start`
+
+### Build
+`npm run build`
+
 
