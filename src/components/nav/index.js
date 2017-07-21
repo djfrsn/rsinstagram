@@ -1,6 +1,6 @@
 const Nav = props =>
   <nav>
-    {props.children}
+    <div>nav</div>
   </nav>;
 
 export default Nav;

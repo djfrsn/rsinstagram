@@ -2,7 +2,7 @@ import Header from 'components/rsinstagram/header';
 
 const HomeHeader = props =>
   <Header>
-    {props.children}
+    <div>home header</div>
   </Header>;
 
 export default HomeHeader;

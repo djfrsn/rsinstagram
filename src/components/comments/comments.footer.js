@@ -2,7 +2,7 @@ import Footer from 'components/rsinstagram/footer';
 
 const CommentsFooter = props =>
   <Footer>
-    {props.children}
+    <div>comments footer</div>
   </Footer>;
 
 export default CommentsFooter;
