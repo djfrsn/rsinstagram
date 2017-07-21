@@ -24,7 +24,8 @@ module.exports = {
     path: dist
   },
   devServer: {
-    contentBase: dist
+    contentBase: dist,
+    historyApiFallback: true
   },
   module: {
     loaders: [
