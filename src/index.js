@@ -2,8 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { postsReducer } from './containers/posts';
-import App from './components/App';
+import { postsReducer } from 'containers/posts';
+import RSInstagram from 'components/rsinstagram';
+import Home from 'components/home';
 
 let store = createStore(postsReducer);
 
@@ -13,18 +14,23 @@ let store = createStore(postsReducer);
 const start = App => {
   render(
     <Provider store={store}>
-      <App />
+      <App>
+        <Home />
+      </App>
     </Provider>,
     document.getElementById('root')
   );
 };
 
-start(App);
+start(RSInstagram);
 
 // Enable HMR - update our components and reducer on hot updates
 if (module.hot) {
-  module.hot.accept(['./components/App', './containers/posts'], () => {
-    store.replaceReducer(postsReducer);
-    start(App);
-  });
+  module.hot.accept(
+    ['components/rsinstagram', 'components/home', 'containers/posts'],
+    () => {
+      store.replaceReducer(postsReducer);
+      start(RSInstagram);
+    }
+  );
 }
