@@ -1,4 +1,4 @@
-import Body from 'components/rsinstagram/body';
+import Body from 'components/app/body';
 
 const CommentsBody = props =>
   <Body>

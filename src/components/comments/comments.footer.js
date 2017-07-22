@@ -1,4 +1,4 @@
-import Footer from 'components/rsinstagram/footer';
+import Footer from 'components/app/footer';
 
 const CommentsFooter = props =>
   <Footer>

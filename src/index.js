@@ -35,7 +35,7 @@ start(RSInstagram);
 // Enable HMR - update our components and reducer on hot updates
 if (module.hot) {
   module.hot.accept(
-    ['components/rsinstagram', 'components/post', 'containers/posts'],
+    ['components/app', 'components/post', 'containers/posts'],
     () => {
       store.replaceReducer(postsReducer);
       start(RSInstagram);

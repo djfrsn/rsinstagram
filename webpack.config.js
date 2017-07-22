@@ -58,6 +58,27 @@ module.exports = {
             ]
           ]
         }
+      },
+      {
+        test: /\.css|\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader?sourceMap'
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: 'inline'
+            }
+          },
+          {
+            loader: 'resolve-url-loader'
+          },
+          {
+            loader: 'sass-loader?sourceMap'
+          }
+        ]
       }
     ]
   },

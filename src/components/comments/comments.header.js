@@ -1,4 +1,4 @@
-import Header from 'components/rsinstagram/header';
+import Header from 'components/app/header';
 
 const CommentsHeader = props =>
   <Header>
