@@ -92,6 +92,30 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        include: path.resolve(__dirname, 'src/images'),
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+          // {
+          //   loader: 'image-webpack-loader',
+          //   query: {
+          //     progressive: true,
+          //     optimizationLevel: 7,
+          //     interlaced: false,
+          //     pngquant: {
+          //       quality: '65-90',
+          //       speed: 4
+          //     }
+          //   }
+          // }
+        ]
       }
     ]
   },

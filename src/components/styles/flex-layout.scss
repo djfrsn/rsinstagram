@@ -1,0 +1,17 @@
+// avoid extends: https://www.sitepoint.com/avoid-sass-extend/
+
+/*
+* Flexbox layout helpers
+*/
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}

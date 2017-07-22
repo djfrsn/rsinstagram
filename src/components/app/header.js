@@ -1,5 +1,7 @@
+import 'components/app/header.scss';
+
 const Header = props =>
-  <header>
+  <header className="app-header">
     {props.children}
   </header>;
 

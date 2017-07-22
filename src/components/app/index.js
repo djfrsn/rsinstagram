@@ -1,7 +1,7 @@
 import './index.scss';
 
 const RSInstagram = props =>
-  <main>
+  <main className="app">
     {props.children}
   </main>;
 

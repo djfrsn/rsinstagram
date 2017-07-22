@@ -2,11 +2,11 @@ import Icon from 'components/partials/fa-icon';
 
 const Nav = props =>
   <nav>
-    <Icon iconName="home" />
-    <Icon iconName="search" />
-    <Icon iconName="plus" />
-    <Icon iconName="heart" />
-    <Icon iconName="person" />
+    <Icon name="home" />
+    <Icon name="search" />
+    <Icon name="plus" />
+    <Icon name="heart" />
+    <Icon name="person" />
   </nav>;
 
 export default Nav;

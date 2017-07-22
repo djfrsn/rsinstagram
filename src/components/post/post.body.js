@@ -1,6 +1,6 @@
 import Icon from 'components/partials/fa-icon';
 import Body from 'components/app/body';
-import 'components/post/post.scss';
+import 'components/post/post.body.scss';
 
 const PostBody = props =>
   <Body>
@@ -8,13 +8,13 @@ const PostBody = props =>
       <div className="row">
         <image src="userprofile" className="userprofile" />
         <p className="">nerdexplainsitall</p>
-        <Icon iconName="dots" />
+        <Icon name="dots" />
       </div>
       <image src="postimage" />
       <div className="row">
-        <Icon iconName="hear" />
-        <Icon iconName="hear" />
-        <Icon iconName="hear" />
+        <Icon name="hear" />
+        <Icon name="hear" />
+        <Icon name="hear" />
       </div>
       <div className="row">
         <p className="likes">34 likes</p>

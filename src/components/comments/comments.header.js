@@ -3,7 +3,7 @@ import Icon from 'components/partials/fa-icon';
 
 const CommentsHeader = props =>
   <Header>
-    <Icon iconName="leftarrow" />
+    <Icon name="leftarrow" />
     <h1 className="commentstitle">Comments</h1>
   </Header>;
 

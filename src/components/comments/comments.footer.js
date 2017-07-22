@@ -3,7 +3,7 @@ import Icon from 'components/partials/fa-icon';
 
 const CommentsFooter = props =>
   <Footer>
-    <Icon iconName="paper-plane-o" />
+    <Icon name="paper-plane-o" />
     <input className="commentinput" />
     <button className="postbutton">Post</button>
   </Footer>;
