@@ -10,8 +10,7 @@ import 'components/post/index.scss';
 // TODO: create scrollable container for postBody
 // For each post display PostBody
 
-const Post = props => {
-  const { fetchPost, post } = props;
+const Post = ({ fetchPost, post }) => {
   console.log('post', post);
   return (
     <div className="post">
