@@ -5,7 +5,7 @@ $icon-top-margin: 15px;
 $icon-outer-margin: 15px;
 
 .actionbar-section {
-  @include flex-row();
+  @include flex-direction();
   background: $color-off-white;
   height: 100%;
 }

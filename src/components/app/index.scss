@@ -26,3 +26,10 @@ body > div {
   background: white;
   @include font-primary();
 }
+
+/*
+* Style Defaults
+*/
+a:active {
+  color: inherit;
+}

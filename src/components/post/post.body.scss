@@ -5,7 +5,7 @@
 $outer-margin: 15px;
 
 .postbody-wrapper {
-  @include flex-row();
+  @include flex-direction();
 }
 
 /*

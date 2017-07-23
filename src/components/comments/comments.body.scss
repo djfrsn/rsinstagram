@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+@import '../../styles/flex-layout';
+@import '../../styles/fonts';
+
+.comment-wrapper {
+  @include flex-wrap();
+  margin-bottom: 40px;
+}
+
+.comment-row {
+  @include flex-direction();
+}
+
+.comment-userthumbnail-wrapper {
+  display: flex;
+  flex: 1 0 0;
+  .comment-userthumbnail {
+    height: 40px;
+    margin: 15px 15px 0;
+  }
+}
+
+.comment-msg-wrapper {
+  display: flex;
+  flex: 5 0 0;
+  .comment-msg-username {
+    @include font-primary-bold();
+    margin-right: 5px;
+  }
+}
+
+.comment-like-wrapper {
+  @include flex-center();
+  flex: 1 0 0;
+  color: $color-light-grey;
+}
+
+.comment-footer {
+  @include flex-direction();
+  margin-left: 70px;
+  color: $color-light-grey;
+  p {
+    margin-top: 0;
+    span {
+      margin-right: 15px;
+    }
+    span:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
+.comment-linebreak {
+  height: 1.5px;
+  width: 100%;
+  background: lighten($color-light-grey, 25%);
+  margin-left: 70px;
+}
