@@ -17,7 +17,12 @@ const PostBody = props =>
       <img src={images('./hackathon.jpg')} className="postbody-image" />
     </div>
     <div className="postbody-actions-wrapper">
-      <Icon name="heart-o" size="2x" className="postbody-icon" />
+      <Icon
+        name="heart-o"
+        size="2x"
+        className="postbody-icon"
+        onClick={props.fetchPost}
+      />
       <Icon name="comment-o" size="2x" className="postbody-icon" />
       <Icon name="paper-plane-o" size="2x" className="postbody-icon" />
       <Icon name="bookmark-o" size="2x" className="postbody-icon" />

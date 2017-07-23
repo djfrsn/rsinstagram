@@ -1,0 +1,71 @@
+@import '../../styles/variables';
+@import '../../styles/flex-layout';
+@import '../../styles/fonts';
+
+$placeholder-color: lighten($color-light-grey, 20%);
+
+.commentsfooter {
+  @include flex-direction();
+  border-top: 1px solid $color-border-light-grey;
+}
+
+.commentsfooter-icon-wrapper {
+  @include flex-center();
+  width: 70px;
+  .commentsfooter-icon {
+    color: $color-light-grey;
+    &.active {
+      color: $color-black;
+    }
+  }
+}
+
+.commentsfooter-input-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 0 10px;
+  input {
+    width: 100%;
+    border: none;
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+  input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $placeholder-color;
+  }
+  input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $placeholder-color;
+  }
+  input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $placeholder-color;
+  }
+  input:-moz-placeholder {
+    /* Firefox 18- */
+    color: $placeholder-color;
+  }
+}
+
+.commentsfooter-postbutton-wrapper {
+  display: flex;
+  button {
+    @include font-primary-bold();
+    margin-right: 15px;
+    background: none;
+    border: none;
+    color: #b4daff;
+    font-size: 1.3em;
+    &.active {
+      color: #6cb6ff;
+      cursor: pointer;
+    }
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+}
