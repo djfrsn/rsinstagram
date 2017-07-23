@@ -8,7 +8,8 @@ const ActionBar = props =>
     <div className="actionbar-icon-wrapper">
       <Icon
         name="instagram"
-        className="actionbar-icon actionbar-icon-camera fa-2x"
+        size="2x"
+        className="actionbar-icon actionbar-icon-camera"
       />
     </div>
     <div className="actionbar-logo-wrapper">
@@ -21,7 +22,8 @@ const ActionBar = props =>
     <div className="actionbar-icon-wrapper">
       <Icon
         name="paper-plane-o"
-        className="actionbar-icon actionbar-icon-plane  fa-2x"
+        size="2x"
+        className="actionbar-icon actionbar-icon-plane"
       />
     </div>
   </section>;

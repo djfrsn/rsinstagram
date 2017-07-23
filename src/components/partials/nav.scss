@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/flex-layout';
+
+.app-nav {
+  @include flex-center();
+  height: 60px;
+  background: $color-off-white;
+  .app-nav-icon {
+    margin: 10px auto;
+  }
+}

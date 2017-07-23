@@ -1,5 +1,5 @@
 const Body = props =>
-  <section>
+  <section className={props.className || ''}>
     {props.children}
   </section>;
 

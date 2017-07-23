@@ -1,5 +1,5 @@
 const Footer = props =>
-  <footer>
+  <footer className={props.className || ''}>
     {props.children}
   </footer>;
 

@@ -1,3 +1,87 @@
-.post-body-image {
-  width: 50%;
+@import '../../styles/variables';
+@import '../../styles/flex-layout';
+@import '../../styles/fonts';
+
+$outer-margin: 15px;
+
+.postbody-wrapper {
+  @include flex-row();
+}
+
+/*
+* Top Section
+*/
+.postbody-heading {
+  @extend .postbody-wrapper;
+  padding-top: 5px;
+
+  .postbody-userthumbnail {
+    height: 40px;
+    margin: $outer-margin;
+  }
+
+  .postbody-username {
+    padding-top: 10px;
+    @include font-primary-bold();
+  }
+
+  .postbody-ellipsis {
+    margin: 28px $outer-margin 0 auto;
+  }
+}
+
+/*
+* Mid Section
+*/
+.postbody-image-wrapper {
+  .postbody-image {
+    width: 100%;
+  }
+}
+
+/*
+* Bottom Section
+*/
+.postbody-actions-wrapper {
+  display: flex;
+  margin: 10px $outer-margin;
+  .postbody-icon {
+    margin: 0 0 0 $outer-margin;
+  }
+  .postbody-icon:first-of-type {
+    margin: 0;
+  }
+  .postbody-icon:last-of-type {
+    margin: 0 0 0 auto;
+  }
+}
+
+.postbody-likescount {
+  @include font-primary-bold();
+  margin: $outer-margin;
+}
+
+.postbody-msgpreview-wrapper {
+  margin-left: $outer-margin;
+  @extend .postbody-wrapper;
+
+  .postbody-username {
+    @include font-primary-bold();
+    margin-right: 5px;
+  }
+
+  .postbody-msgpreview {
+    margin: 0;
+  }
+
+  .postbody-msgpreview-link {
+    color: $color-light-grey;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+}
+
+.postbody-timestamp {
+  color: $color-light-grey;
+  margin: 10px 0 $outer-margin $outer-margin;
 }

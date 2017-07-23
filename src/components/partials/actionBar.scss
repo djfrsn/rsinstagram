@@ -1,37 +1,34 @@
-@import '../styles/flex-layout';
-@import '../styles/settings';
+@import '../../styles/flex-layout';
+@import '../../styles/variables';
 
 $icon-top-margin: 15px;
 $icon-outer-margin: 15px;
 
 .actionbar-section {
   @include flex-row();
-  background: $off-white;
+  background: $color-off-white;
   height: 100%;
-}
-
-.actionbar-icon {
 }
 
 .actionbar-icon-wrapper {
   display: flex;
   width: 40%;
-}
 
-.actionbar-icon-camera {
-  margin: $icon-top-margin auto 0 $icon-outer-margin;
-}
+  .actionbar-icon-camera {
+    margin: $icon-top-margin auto 0 $icon-outer-margin;
+  }
 
-.actionbar-icon-plane {
-  margin: $icon-top-margin $icon-outer-margin 0 auto;
+  .actionbar-icon-plane {
+    margin: $icon-top-margin $icon-outer-margin 0 auto;
+  }
 }
 
 .actionbar-logo-wrapper {
-  width: 40%;
-}
+  width: 30%;
 
-.actionbar-logo {
-  text-indent: -9999px;
-  width: 100%;
-  margin-top: 10px;
+  .actionbar-logo {
+    text-indent: -9999px;
+    width: 100%;
+    margin-top: 15px;
+  }
 }

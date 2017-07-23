@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import Icon from 'components/partials/faIcon';
 import Body from 'components/app/body';
 import UserThumbnail from 'components/partials/userThumbnail';
@@ -7,30 +8,31 @@ const images = require.context('assets/images', true); // dynamic image require 
 
 const PostBody = props =>
   <Body>
-    <div className="color">
-      <div className="row">
-        <UserThumbnail />
-        <p className="">nerdexplainsitall</p>
-        <Icon name="dots" />
-      </div>
-      <img src={images('./hackathon.jpg')} className="post-body-image" />
-      <div className="row">
-        <Icon name="hear" />
-        <Icon name="hear" />
-        <Icon name="hear" />
-      </div>
-      <div className="row">
-        <p className="likes">34 likes</p>
-      </div>
-      <div className="row">
-        <p className="username">nerdexplainsitall</p>
-        <p className="msgpreview">preview...</p>
-        <p className="more">more</p>
-      </div>
-      <div className="row">
-        <p className="timestamp">26 minutes ago</p>
-      </div>
+    <div className="postbody-heading">
+      <UserThumbnail className="postbody-userthumbnail" />
+      <p className="postbody-username">nerdexplainsitall</p>
+      <Icon name="ellipsis-h" className="postbody-ellipsis" />
     </div>
+    <div className="postbody-image-wrapper">
+      <img src={images('./hackathon.jpg')} className="postbody-image" />
+    </div>
+    <div className="postbody-actions-wrapper">
+      <Icon name="heart-o" size="2x" className="postbody-icon" />
+      <Icon name="comment-o" size="2x" className="postbody-icon" />
+      <Icon name="paper-plane-o" size="2x" className="postbody-icon" />
+      <Icon name="bookmark-o" size="2x" className="postbody-icon" />
+    </div>
+    <p className="postbody-likescount">34 likes</p>
+    <div className="postbody-msgpreview-wrapper">
+      <p className="postbody-msgpreview">
+        <span className="postbody-username">nerdexplainsitall</span>
+        preview...
+        <Link to="/comments" className="postbody-msgpreview-link">
+          more
+        </Link>
+      </p>
+    </div>
+    <p className="postbody-timestamp">26 minutes ago</p>
   </Body>;
 
 export default PostBody;
