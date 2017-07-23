@@ -1,5 +1,5 @@
 import Header from 'components/app/header';
-import Icon from 'components/partials/fa-icon';
+import Icon from 'components/partials/faIcon';
 
 const CommentsHeader = props =>
   <Header>

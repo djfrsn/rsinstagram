@@ -1,4 +1,4 @@
-import Icon from 'components/partials/fa-icon';
+import Icon from 'components/partials/faIcon';
 
 const Nav = props =>
   <nav>

@@ -3,6 +3,7 @@ $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
 @import '~normalize-scss/sass/normalize/import-now';
 
+@import '../../assets/fonts/proxima-nova/font';
 @import '../styles/flex-layout';
 
 html,
@@ -22,4 +23,5 @@ body > div {
   max-width: 480px;
   width: 100%;
   background: white;
+  font-family: 'Proxima Nova';
 }

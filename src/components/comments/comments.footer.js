@@ -1,5 +1,5 @@
 import Footer from 'components/app/footer';
-import Icon from 'components/partials/fa-icon';
+import Icon from 'components/partials/faIcon';
 
 const CommentsFooter = props =>
   <Footer>

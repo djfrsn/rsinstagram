@@ -1,5 +1,5 @@
 import Body from 'components/app/body';
-import Icon from 'components/partials/fa-icon';
+import Icon from 'components/partials/faIcon';
 
 const CommentsBody = props =>
   <Body>

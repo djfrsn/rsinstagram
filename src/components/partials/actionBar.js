@@ -1,5 +1,7 @@
-import Icon from 'components/partials/fa-icon';
+import Icon from 'components/partials/faIcon';
 import 'components/partials/actionBar.scss';
+
+const images = require.context('assets/images', true); // dynamic image require - https://medium.com/@bogdan_plieshka/loading-static-and-dynamic-images-with-webpack-8a933e82cb1e
 
 const ActionBar = props =>
   <section className="actionbar-section">
@@ -10,7 +12,11 @@ const ActionBar = props =>
       />
     </div>
     <div className="actionbar-logo-wrapper">
-      <div className="actionbar-logo">Instagram</div>
+      <img
+        src={images('./instagram_logo.png')}
+        className="actionbar-logo"
+        alt="Instagram"
+      />
     </div>
     <div className="actionbar-icon-wrapper">
       <Icon

@@ -30,7 +30,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         loader: 'eslint-loader',
         enforce: 'pre',
         exclude: /node_modules/,
@@ -40,7 +40,7 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -95,7 +95,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        include: path.resolve(__dirname, 'src/images'),
+        include: path.resolve(__dirname, 'src/assets/images'),
         use: [
           {
             loader: 'url-loader',
@@ -121,7 +121,7 @@ module.exports = {
   },
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['.js', '.json', '.css', '.scss', '.html']
+    extensions: ['.js', '.jsx', '.json', '.css', '.scss', '.html']
   },
   plugins: [
     new CleanWebpackPlugin(['dist']), // clean dist before each build
