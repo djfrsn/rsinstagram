@@ -1,11 +1,9 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import reducers from 'reducers';
+import getStore from 'store';
 import RSInstagram from 'components/app';
 import Post from 'components/post';
 import Comments from 'components/Comments';
@@ -13,8 +11,9 @@ import Comments from 'components/Comments';
 // Config
 import { COMMENTS_PATH } from 'config';
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = getStore();
 const history = syncHistoryWithStore(browserHistory, store);
+const ROOT_NODE = document.getElementById('root');
 
 // TODO: add https://www.npmjs.com/package/babel-plugin-transform-imports to this 4over/4over-cart
 // TODO: setup prod webpack config - https://survivejs.com/webpack/developing/composing-configuration/
@@ -29,7 +28,7 @@ const start = App => {
         </Route>
       </Router>
     </Provider>,
-    document.getElementById('root')
+    ROOT_NODE
   );
 };
 
@@ -37,11 +36,8 @@ start(RSInstagram);
 
 // Enable HMR - update our components and reducer on hot updates
 if (module.hot) {
-  module.hot.accept(
-    ['components/app', 'components/post', 'containers/posts'],
-    () => {
-      store.replaceReducer(reducers);
-      start(RSInstagram);
-    }
-  );
+  module.hot.accept(['components/app', 'components/post'], () => {
+    unmountComponentAtNode(ROOT_NODE); // clean up event listeners/handlers
+    start(RSInstagram);
+  });
 }

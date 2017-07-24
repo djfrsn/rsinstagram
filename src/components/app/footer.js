@@ -1,8 +1,8 @@
 import 'components/app/footer.scss';
 
-const Footer = ({ className }) =>
+const Footer = ({ className, children }) =>
   <footer className={`app-footer${className ? ` ${className}` : ''}`}>
-    {props.children}
+    {children}
   </footer>;
 
 export default Footer;

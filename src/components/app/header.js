@@ -1,8 +1,8 @@
 import 'components/app/header.scss';
 
-const Header = ({ className }) =>
+const Header = ({ className, children }) =>
   <header className={`app-header${className ? ` ${className}` : ''}`}>
-    {props.children}
+    {children}
   </header>;
 
 export default Header;

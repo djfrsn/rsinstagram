@@ -17,6 +17,7 @@ module.exports = {
   entry: [
     // TODO: remove hot loader in prod - https://survivejs.com/webpack/appendices/hmr-with-react/
     'react-hot-loader/patch',
+    'babel-polyfill', // Redux Saga support
     './src/index.js'
   ],
   output: {

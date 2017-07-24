@@ -1,8 +1,8 @@
 import './index.scss';
 
-const RSInstagram = props =>
+const RSInstagram = ({ children }) =>
   <main className="app">
-    {props.children}
+    {children}
   </main>;
 
 export default RSInstagram;
