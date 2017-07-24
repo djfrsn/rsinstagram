@@ -4,11 +4,9 @@ import UserThumbnail from 'components/partials/userThumbnail';
 import 'components/comments/comments.body.scss';
 
 const CommentsBody = ({ comments }) => {
-  // const { comments } = post;
-  console.log(comments);
   return (
     <Body>
-      {comments.map(comment =>
+      {comments.map((comment, index, commentsArray) =>
         <div key={comment.id} className="comment-wrapper">
           <div className="comment-row">
             <div className="comment-userthumbnail-wrapper">
@@ -33,7 +31,9 @@ const CommentsBody = ({ comments }) => {
               <span className="comment-footer-reply">reply</span>
             </p>
           </div>
-          <span className="comment-linebreak" />
+          {index !== commentsArray.length - 1
+            ? <span className="comment-linebreak" />
+            : null}
         </div>
       )}
     </Body>

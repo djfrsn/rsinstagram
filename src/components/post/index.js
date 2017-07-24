@@ -7,9 +7,6 @@ import Nav from 'components/partials/nav';
 import Footer from 'components/app/footer';
 import 'components/post/index.scss';
 
-// TODO: display post from data & create scrollable container for postBody
-// For each post display PostBody
-
 const posts = postsArray =>
   postsArray.map(post => {
     return <PostBody key={post.id} post={post} />;
