@@ -1,7 +1,7 @@
 {
   "name": "rsinstagram",
   "version": "0.0.0",
-  "description": "Code example based off Instagram UI",
+  "description": "Instagram clone",
   "main": "src/index.js",
   "scripts": {
     "precommit": "lint-staged",
@@ -11,9 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
-    "*.js": [
-      "npm run prettier"
-    ]
+    "*.js": ["npm run prettier"]
   },
   "author": "Dennis Jefferson <dennisjefferson.com@gmail.com> (dennisjefferson.com)",
   "license": "ISC",
@@ -34,6 +32,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "firebase-tools": "^3.9.1",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",

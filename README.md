@@ -1,4 +1,6 @@
-# RSInstagram Code Test
+# RSInstagram - Instagram clone
+
+Demo - https://rsinstagram-5d3df.firebaseapp.com
 
 ### Install
 `git clone https://github.com/djfrsn/rsinstagram.git && cd rsinstagram`
