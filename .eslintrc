@@ -3,6 +3,15 @@
     "prettier",
     "prettier/react"
   ],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
   "plugins": [
     "prettier"
   ],

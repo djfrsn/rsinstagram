@@ -49,7 +49,6 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: [
-            'react',
             [
               'env',
               {
@@ -59,7 +58,9 @@ module.exports = {
                 },
                 modules: false // use Webpack 2 ES modules instead of babel's
               }
-            ]
+            ],
+            'react',
+            'stage-0'
           ]
         }
       },
