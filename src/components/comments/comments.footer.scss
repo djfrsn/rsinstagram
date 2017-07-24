@@ -59,7 +59,9 @@ $placeholder-color: lighten($color-light-grey, 20%);
     border: none;
     color: #b4daff;
     font-size: 1.3em;
+    pointer-events: none;
     &.active {
+      pointer-events: auto;
       color: #6cb6ff;
       cursor: pointer;
     }
