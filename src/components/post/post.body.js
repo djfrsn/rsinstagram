@@ -5,11 +5,12 @@ import Body from 'components/app/body';
 import UserThumbnail from 'components/partials/userThumbnail';
 import 'components/post/post.body.scss';
 
-const images = require.context('assets/images', true); // dynamic image require - https://medium.com/@bogdan_plieshka/loading-static-and-dynamic-images-with-webpack-8a933e82cb1e
+const images = require.context('assets/images', true); // dynamic image require - https://medium.com/@bogdan_plieshka/loading-static-and-dynamic-images-with-webpack-8a933e82cbe
 
-const PostBody = ({ post }) => {
-  const { id, user, comments, likes, image } = post;
+const PostBody = ({ post, likePost }) => {
+  const { id, user, comments, likes, image, user_likes } = post;
   const { name: userName } = user;
+  const onLikePost = () => likePost(post);
   let commentsUrl = { pathname: '/comments', query: { id } };
   return (
     <Body>
@@ -24,7 +25,12 @@ const PostBody = ({ post }) => {
         <img src={images(`./${image}`)} className="postbody-image" />
       </div>
       <div className="postbody-actions-wrapper">
-        <Icon name="heart-o" size="2x" className="postbody-icon" />
+        <Icon
+          name={user_likes ? 'heart' : 'heart-o'}
+          size="2x"
+          className={`postbody-icon${user_likes ? ' active' : ''}`}
+          onClick={onLikePost}
+        />
         <Icon name="comment-o" size="2x" className="postbody-icon" />
         <Icon name="paper-plane-o" size="2x" className="postbody-icon" />
         <Icon name="bookmark-o" size="2x" className="postbody-icon" />

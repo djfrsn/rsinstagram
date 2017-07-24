@@ -47,6 +47,9 @@ $outer-margin: 15px;
   margin: 10px $outer-margin;
   .postbody-icon {
     margin: 0 0 0 $outer-margin;
+    &.active {
+      color: $color-red;
+    }
   }
   .postbody-icon:first-of-type {
     margin: 0;

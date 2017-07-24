@@ -7,18 +7,18 @@ import Nav from 'components/partials/nav';
 import Footer from 'components/app/footer';
 import 'components/post/index.scss';
 
-const posts = postsArray =>
-  postsArray.map(post => {
-    return <PostBody key={post.id} post={post} />;
+const posts = ({ data, likePost }) =>
+  data.map(post => {
+    return <PostBody key={post.id} post={post} likePost={likePost} />;
   });
 
-const Post = ({ fetchPost, post }) => {
+const Post = ({ post, likePost }) => {
   return (
     <div className="post">
       <Header>
         <ActionBar />
       </Header>
-      {posts(post.posts)}
+      {posts({ data: post.posts, likePost })}
       <Footer>
         <Nav />
       </Footer>
@@ -30,5 +30,5 @@ export default connect(
   state => ({
     post: state.post
   }),
-  { postActions }
+  { ...postActions }
 )(Post);

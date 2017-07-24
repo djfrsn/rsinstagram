@@ -1,6 +1,6 @@
 import 'components/partials/faIcon.scss';
 
-const Icon = ({ className, name, size, onClick }) =>
+const Icon = ({ className, name, size, onClick, id }) =>
   <i
     className={`fa fa-${name} fa-${size ? `${size}` : '1x'}${className
       ? ` ${className}`

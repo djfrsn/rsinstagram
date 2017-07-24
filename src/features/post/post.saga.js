@@ -10,7 +10,7 @@ import {
 function* fetchPost(action) {
   try {
     const response = yield call(request, action.payload.posts_url);
-    yield put({ type: FETCH_POST_SUCCESS, posts: response.posts });
+    yield put({ type: FETCH_POST_SUCCESS, payload: { posts: response.posts } });
   } catch (e) {
     yield put({ type: FETCH_POST_FAILUIRE, message: e.message });
   }
