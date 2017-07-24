@@ -27,7 +27,7 @@ const CommentsBody = ({ comments }) =>
           <p>
             <span className="comment-footer-timestamp">4d</span>{' '}
             <span className="comment-footer-likecount">1 like</span>{' '}
-            <span className="comment-footer-reply">reply</span>
+            <span className="comment-footer-reply">Reply</span>
           </p>
         </div>
         {index !== commentsArray.length - 1

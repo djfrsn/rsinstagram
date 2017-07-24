@@ -11,7 +11,11 @@ const PostBody = ({ post, likePost }) => {
   const { id, user, comments, likes, image, user_likes } = post;
   const { name: userName } = user;
   const onLikePost = () => likePost(post);
-  let commentsUrl = { pathname: '/comments', query: { id } };
+  let commentsPreviewUrl = { pathname: '/comments', query: { id } };
+  let commentsIconUrl = {
+    pathname: '/comments',
+    query: { id, autofocus: true }
+  };
   return (
     <Body>
       <div className="postbody-heading">
@@ -31,7 +35,9 @@ const PostBody = ({ post, likePost }) => {
           className={`postbody-icon${user_likes ? ' active' : ''}`}
           onClick={onLikePost}
         />
-        <Icon name="comment-o" size="2x" className="postbody-icon" />
+        <Link to={commentsIconUrl} className="postbody-msgpreview-link">
+          <Icon name="comment-o" size="2x" className="postbody-icon" />
+        </Link>
         <Icon name="paper-plane-o" size="2x" className="postbody-icon" />
         <Icon name="bookmark-o" size="2x" className="postbody-icon" />
       </div>
@@ -44,7 +50,7 @@ const PostBody = ({ post, likePost }) => {
             {userName}
           </span>
           {truncate(comments[0].comment, { length: 15 })}
-          <Link to={commentsUrl} className="postbody-msgpreview-link">
+          <Link to={commentsPreviewUrl} className="postbody-msgpreview-link">
             more
           </Link>
         </p>

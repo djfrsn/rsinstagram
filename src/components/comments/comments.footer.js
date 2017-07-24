@@ -12,6 +12,7 @@ class CommentsFooter extends Component {
   }
   render() {
     const {
+      autofocus,
       post,
       postCommentInputValue,
       postComment,
@@ -20,6 +21,7 @@ class CommentsFooter extends Component {
     const onPostComment = e => postComment(post);
     const onPostCommentValueChange = e =>
       updatePostCommentInputValue(e.currentTarget.value);
+    console.log('autofocus', autofocus, autofocus ? 'autofocus' : 'false');
     return (
       <Footer className="commentsfooter">
         <div className="commentsfooter-icon-wrapper">
@@ -31,6 +33,7 @@ class CommentsFooter extends Component {
         </div>
         <div className="commentsfooter-input-wrapper">
           <input
+            autoFocus={autofocus ? 'autofocus' : false}
             className="commentinput"
             type="text"
             value={postCommentInputValue}

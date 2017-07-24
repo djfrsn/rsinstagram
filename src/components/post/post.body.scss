@@ -57,6 +57,10 @@ $outer-margin: 15px;
   .postbody-icon:last-of-type {
     margin: 0 0 0 auto;
   }
+  .postbody-msgpreview-link {
+    margin: 0 0 0 $outer-margin;
+    color: $color-black;
+  }
 }
 
 .postbody-likescount {

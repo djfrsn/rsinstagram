@@ -6,9 +6,9 @@ import CommentsBody from 'components/comments/comments.body';
 import CommentFooter from 'components/comments/comments.footer';
 
 let getComments = ({ post, routing }) => {
-  const id = routing.locationBeforeTransitions.query.id;
+  const { id, autofocus } = routing.locationBeforeTransitions.query;
   const data = find(post.posts, { id: Number(id) }) || {};
-  return { post: data, comments: data.comments };
+  return { post: data, comments: data.comments, autofocus };
 };
 
 const Comments = ({
@@ -23,6 +23,7 @@ const Comments = ({
       <CommentsHeader />
       <CommentsBody comments={data.comments || []} />
       <CommentFooter
+        autofocus={data.autofocus}
         post={data.post}
         postCommentInputValue={post.postCommentInputValue}
         postComment={postComment}
