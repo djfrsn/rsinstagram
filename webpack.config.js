@@ -4,8 +4,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const dist = path.resolve(__dirname, 'dist');
+const assetsPath = path.resolve(__dirname, 'src/assets/public');
 // TODO: check for things labled dev-only and opt those features out in prod
 
 // Add for prod
@@ -18,6 +20,7 @@ module.exports = {
     // TODO: remove hot loader in prod - https://survivejs.com/webpack/appendices/hmr-with-react/
     'react-hot-loader/patch',
     'babel-polyfill', // Redux Saga support
+    'whatwg-fetch', // Polyfill fetch api
     './src/index.js'
   ],
   output: {
@@ -130,6 +133,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html'),
       hash: true
     }),
+    new CopyWebpackPlugin([{ from: assetsPath }]),
     new webpack.NamedModulesPlugin(), //  display file paths in console during hmr - dev-only
     new webpack.ProvidePlugin({
       // global keywords available in the app

@@ -87,7 +87,7 @@ const toContentType = response => {
  *
  * @return {object}           The response data
  */
-const request = (url, options) =>
+const request = (url, options = {}) =>
   fetch(url, options)
     .then(checkResponse)
     .then(toContentType)
