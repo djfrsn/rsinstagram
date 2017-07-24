@@ -20,6 +20,8 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "font-awesome": "^4.7.0",
+    "lodash.find": "^4.6.0",
+    "lodash.truncate": "^4.4.2",
     "normalize-scss": "^7.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

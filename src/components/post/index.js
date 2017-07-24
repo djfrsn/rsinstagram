@@ -10,15 +10,10 @@ import 'components/post/index.scss';
 // TODO: display post from data & create scrollable container for postBody
 // For each post display PostBody
 
-function posts(postsArray) {
-  let postsElements = [];
-
-  postsArray.forEach(post => {
-    postsElements.push(<PostBody key={post.id} post={post} />);
+const posts = postsArray =>
+  postsArray.map(post => {
+    return <PostBody key={post.id} post={post} />;
   });
-
-  return postsElements;
-}
 
 const Post = ({ fetchPost, post }) => {
   return (
@@ -38,5 +33,5 @@ export default connect(
   state => ({
     post: state.post
   }),
-  Object.assign({}, postActions)
+  { postActions }
 )(Post);

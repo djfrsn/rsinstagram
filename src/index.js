@@ -8,7 +8,7 @@ import getStore from 'store';
 import RSInstagram from 'components/app';
 import { postActions } from 'features/post';
 import Post from 'components/post';
-import Comments from 'components/Comments';
+import Comments from 'components/comments';
 
 // Config
 import { COMMENTS_PATH } from 'config';

@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import truncate from 'lodash.truncate';
 import Icon from 'components/partials/faIcon';
 import Body from 'components/app/body';
 import UserThumbnail from 'components/partials/userThumbnail';
@@ -7,9 +8,9 @@ import 'components/post/post.body.scss';
 const images = require.context('assets/images', true); // dynamic image require - https://medium.com/@bogdan_plieshka/loading-static-and-dynamic-images-with-webpack-8a933e82cb1e
 
 const PostBody = ({ post }) => {
-  console.log('post', post);
-  const { user, comments, likes, image } = post;
+  const { id, user, comments, likes, image } = post;
   const { name: userName } = user;
+  let commentsUrl = { pathname: '/comments', query: { id } };
   return (
     <Body>
       <div className="postbody-heading">
@@ -36,8 +37,8 @@ const PostBody = ({ post }) => {
           <span className="postbody-username">
             {userName}
           </span>
-          {comments[0].comment}
-          <Link to="/comments" className="postbody-msgpreview-link">
+          {truncate(comments[0].comment, { length: 15 })}
+          <Link to={commentsUrl} className="postbody-msgpreview-link">
             more
           </Link>
         </p>
