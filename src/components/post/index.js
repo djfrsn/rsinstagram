@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { postActions } from 'features/posts';
+import { postActions } from 'features/post';
 import Header from 'components/app/header';
 import ActionBar from 'components/partials/actionBar';
 import PostBody from 'components/post/post.body';
@@ -10,14 +10,23 @@ import 'components/post/index.scss';
 // TODO: display post from data & create scrollable container for postBody
 // For each post display PostBody
 
+function posts(postsArray) {
+  let postsElements = [];
+
+  postsArray.forEach(post => {
+    postsElements.push(<PostBody key={post.id} post={post} />);
+  });
+
+  return postsElements;
+}
+
 const Post = ({ fetchPost, post }) => {
-  console.log('post', post);
   return (
     <div className="post">
       <Header>
         <ActionBar />
       </Header>
-      <PostBody fetchPost={fetchPost} />
+      {posts(post.posts)}
       <Footer>
         <Nav />
       </Footer>

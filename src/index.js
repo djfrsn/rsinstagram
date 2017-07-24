@@ -4,7 +4,9 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import getStore from 'store';
+
 import RSInstagram from 'components/app';
+import { postActions } from 'features/post';
 import Post from 'components/post';
 import Comments from 'components/Comments';
 
@@ -31,6 +33,9 @@ const start = App => {
     ROOT_NODE
   );
 };
+
+// Fetch initial data
+store.dispatch(postActions.fetchPost({ post_url: '/json/posts.json' }));
 
 start(RSInstagram);
 
