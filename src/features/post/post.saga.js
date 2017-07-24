@@ -17,7 +17,7 @@ function* fetchPost(action) {
 }
 
 /*
-* Starts fetchPosts on each dispatched `FETCH_POST` action.
+* Starts fetchPost on each dispatched `FETCH_POST` action.
 */
 export function* postSaga() {
   yield takeEvery(FETCH_POST, fetchPost);

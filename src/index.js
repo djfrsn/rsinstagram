@@ -19,7 +19,7 @@ const ROOT_NODE = document.getElementById('root');
 
 // TODO: add https://www.npmjs.com/package/babel-plugin-transform-imports to this 4over/4over-cart
 // TODO: setup prod webpack config - https://survivejs.com/webpack/developing/composing-configuration/
-// with above..enableb tree shaking https://survivejs.com/webpack/optimizing/tree-shaking/
+// with above..enable tree shaking https://survivejs.com/webpack/optimizing/tree-shaking/
 const start = App => {
   render(
     <Provider store={store}>
@@ -39,10 +39,13 @@ store.dispatch(postActions.fetchPost({ post_url: '/json/posts.json' }));
 
 start(RSInstagram);
 
-// Enable HMR - update our components and reducer on hot updates
+// Enable HMR - update our components on hot updates
 if (module.hot) {
-  module.hot.accept(['components/app', 'components/post'], () => {
-    unmountComponentAtNode(ROOT_NODE); // clean up event listeners/handlers
-    start(RSInstagram);
-  });
+  module.hot.accept(
+    ['components/app', 'components/post', 'components/comments'],
+    () => {
+      unmountComponentAtNode(ROOT_NODE); // clean up event listeners/handlers
+      start(RSInstagram);
+    }
+  );
 }

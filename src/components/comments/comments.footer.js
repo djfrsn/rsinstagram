@@ -5,8 +5,8 @@ import 'components/comments/comments.footer.scss';
 
 class CommentsFooter extends Component {
   componentDidMount() {
-    const inputHasText = this.props.postCommentInputValue.length > 0;
-    if (inputHasText) {
+    const commentInputHasText = this.props.postCommentInputValue.length > 0;
+    if (commentInputHasText) {
       this.props.updatePostCommentInputValue(''); // clear any stored input val on initial render
     }
   }

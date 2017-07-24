@@ -11,16 +11,16 @@ export const initialState = {
   postCommentInputValue: ''
 };
 
-const newPosts = (state, action) => {
+const updatePosts = (state, action) => {
   return { ...state, posts: action.payload.posts };
 };
 
 export function postReducer(state = initialState, action) {
   switch (action.type) {
     case LIKE_POST:
-      return newPosts(state, action);
+      return updatePosts(state, action);
     case POST_COMMENT:
-      return newPosts(state, action);
+      return updatePosts(state, action);
     case POST_COMMENT_VALUE_CHANGE:
       return {
         ...state,
@@ -29,7 +29,7 @@ export function postReducer(state = initialState, action) {
     case FETCH_POST:
       return state;
     case FETCH_POST_SUCCESS:
-      return newPosts(state, action);
+      return updatePosts(state, action);
     default:
       return state;
   }
