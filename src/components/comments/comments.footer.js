@@ -21,7 +21,11 @@ class CommentsFooter extends Component {
     const onPostComment = e => postComment(post);
     const onPostCommentValueChange = e =>
       updatePostCommentInputValue(e.currentTarget.value);
-    console.log('autofocus', autofocus, autofocus ? 'autofocus' : 'false');
+    const handleKeyPress = e => {
+      if (e.key === 'Enter') {
+        onPostComment(post);
+      }
+    };
     return (
       <Footer className="commentsfooter">
         <div className="commentsfooter-icon-wrapper">
@@ -39,6 +43,7 @@ class CommentsFooter extends Component {
             value={postCommentInputValue}
             placeholder="Add a comment..."
             onChange={onPostCommentValueChange}
+            onKeyPress={handleKeyPress}
           />
         </div>
         <div className="commentsfooter-postbutton-wrapper">
