@@ -28,6 +28,10 @@
     @include font-primary-bold();
     margin-right: 5px;
   }
+  .comment-hashtag {
+    color: #12437d;
+    cursor: pointer;
+  }
 }
 
 .comment-like-wrapper {

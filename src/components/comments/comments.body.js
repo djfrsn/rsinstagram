@@ -3,6 +3,12 @@ import Icon from 'components/partials/faIcon';
 import UserThumbnail from 'components/partials/userThumbnail';
 import 'components/comments/comments.body.scss';
 
+function parseText(text) {
+  return {
+    __html: text.replace(/#(\w+)/g, "<span class='comment-hashtag'>$&</a>") // would be server side in real world usage
+  };
+}
+
 const CommentsBody = ({ comments }) =>
   <Body>
     {comments.map((comment, index, commentsArray) =>
@@ -16,7 +22,7 @@ const CommentsBody = ({ comments }) =>
               <span className="comment-msg-username">
                 {comment.name}
               </span>
-              {comment.comment}
+              <span dangerouslySetInnerHTML={parseText(comment.comment)} />
             </p>
           </div>
           <div className="comment-like-wrapper">
